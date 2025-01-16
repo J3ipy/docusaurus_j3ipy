@@ -4,8 +4,9 @@ sidebar_position: 1
 
 # Teoria do Algoritmo RRT
 
-Árvore aleatória de exploração rápida (RRT - Rapidly Random-Tree) é uma estrutura de dados e Algoritmo que é projetado para pesquisar de forma eficiente não convexa espaços de alta dimensão. RRTs são construidos de forma incremental de uma forma que reduz rapidamente a distância esperada de um ponto escolhido aleatoriamente para a árvore.
+Árvore aleatória de exploração rápida (RRT - Rapidly-exploring Random Tree) é uma estrutura de dados e algoritmo que é projetado para pesquisar de forma eficiente em espaços não convexos e de alta dimensionalidade. RRTs são construidos de forma incremental de uma forma que reduz rapidamente a distância esperada de um ponto escolhido aleatoriamente para a árvore.
 RRTs são particulamente adequados para problemas de planejamento de caminhos que envolvam obstáculos e restrições diferenciais.
+
 
 ## Explorando mais um pouco sobre o funcionamento 
 
@@ -50,6 +51,7 @@ Obs: Poderia ter sido colocado ou substituído RAND_CONF() por RAND_FREE_CONF(),
 - **Viés em Direção ao Objetivo (Goal Biasing):** Para acelerar a convergência, o RRT pode ser modificado para favorecer a seleção do objetivo (q_goal​) como q_rand​. Esse viés é controlado por uma probabilidade p_goal​, que define:
 
   - Com probabilidade *p_goal, q_rand = q_goal*.
+  
   - Com probabilidade *1 -  p_goal, q_rand* é amostrado aleatoriamente.
 
 Esse ajuste aumenta a eficiência em problemas onde a conexão direta com o objetivo é mais provável.
@@ -57,41 +59,40 @@ Esse ajuste aumenta a eficiência em problemas onde a conexão direta com o obje
 
 - **Distância euclidiana no RRT:** A distância euclidiana é uma métrica comum utilizada no RRT para calcular a proximidade entre dois pontos no espaço de configuração. Essa distância é definida como:
 
-$$
-d(q_1, q_2) = \sqrt{\sum_{i=1}^{n} (q_{1i} - q_{2i})^2}
-$$
+![formula euclidiana](./img/euclidiana.png)
 
 Onde: 
   - q1 e q2 são os dois pontos no espaço de configuração.
+
   - n é o número de dimensões do espaço
 
 **Propriedades**
 
   - A distância euclidiana fornece uma medida direta de "reta" entre dois pontos
-  - É usado para encontrar o nó q_near mais próximo de q_rand quanto para calcular o fator de crescimento $\Delta q$
+
+  - É usado para encontrar o nó q_near mais próximo de q_rand quanto para calcular o fator de crescimento Δq
 
 - **Fator de Crescimento(Δq):** O fator de crescimento define a distância máxima que a árvore pode se expandir em uma única iteração. Ele é calculado como: 
 
-$$
+![formula fator de crescimento](./img/fator_crescimento.png)
 
-q_{\text{new}} = q_{\text{near}} + \Delta q \cdot \frac{q_{\text{rand}} - q_{\text{near}}}{\|q_{\text{rand}} - q_{\text{near}}\|}
-
-$$
-
-A escolha de $\Delta q$ é crítica: valores pequenos tornam a exploração lenta, enquanto valores grandes aumentam o risco de colisões com obstáculos.
+A escolha de Δq é crítica: valores pequenos tornam a exploração lenta, enquanto valores grandes aumentam o risco de colisões com obstáculos.
 
 
 
 **Aplicações do RRT**
 
 - Robótica Móvel: Planejamento de trajetórias para robôs em ambientes complexos, como em navegação autônoma.
+
 - Manipulação Robótica: Planejamento de movimentos para braços robóticos, permitindo a realização de tarefas como agarrar objetos.
+
 - Robôs Humanóides: Navegação em ambientes projetados para humanos, como casas e escritórios.
+
 - Condução Autônoma: Definição de rotas eficientes e seguras para veículos autônomos.
-- Animação por Computador: Criação de movimentos realistas para personagens, objetos e câmeras em animações e jogos.
 
 
 
+![RRT](./img/treemovie.gif)
 
 
 [1] Delimita a área do espaço onde esse ponto é o mais próximo, em comparação a todos os outros pontos da árvore.

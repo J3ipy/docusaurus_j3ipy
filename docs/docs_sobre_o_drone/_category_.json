@@ -1,0 +1,8 @@
+{
+  "label": "Drone Tello",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Conceitos Básicos de programação do drone Tello."
+  }
+}

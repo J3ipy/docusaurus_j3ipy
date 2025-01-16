@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Comandos Básicos e Configuração do Tello
 
 Documents are **groups of pages** connected through:
 

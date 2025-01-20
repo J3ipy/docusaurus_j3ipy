@@ -5,7 +5,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Documentos de João Pedro',
-  tagline: 'Androides sonham com ovelhas eletrônicas?',
+  tagline: 'Androides sonham com ovelhas elétricas?',
+
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -83,12 +84,7 @@ const config = {
             position: 'left',
             label: 'LABIC',
           },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Estudos',
-          },
+
           {
             href: 'https://github.com/J3ipy',
             label: 'GitHub',
@@ -104,10 +100,6 @@ const config = {
             items: [
               {
                 label: 'Documentos LABIC',
-                to: '/docs/intro',
-              },
-              {
-                label: 'Documentos de Estudo',
                 to: '/docs/intro',
               },
             ],

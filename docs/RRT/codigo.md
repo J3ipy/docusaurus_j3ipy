@@ -6,8 +6,6 @@ sidebar_position: 2
 
 Partindo para a codificação, decidi utilizar a linguagem de programação fácil por conta do seu vasto acervo de bibliotecas e por familiaridade com a linguagem.
 
-Claro! Vou explicar seu código em detalhes, linha por linha.
-
 ---
 
 ### **Importação de bibliotecas**
@@ -344,9 +342,6 @@ def nearest_node(tree, point):
 
 ---
 
-Claro! Vamos abordar o cálculo do ângulo na criação do novo nó (`new_node`) de maneira visual e com fórmulas detalhadas para facilitar o entendimento.
-
----
 
 ### **Objetivo do cálculo do ângulo**
 
@@ -380,33 +375,33 @@ Essas fórmulas deslocam o nó mais próximo em direção ao ponto aleatório, r
 ### **Exemplo prático com números**
 
 Imagine:
-- O nó mais próximo está em $(2, 3)$.
-- O ponto aleatório está em $(6, 7)$.
-- O tamanho do passo ($step\_size$) é 2.
+- O nó mais próximo está em (2,3).
+- O ponto aleatório está em (6, 7).
+- O tamanho do passo step_size é 2.
 
 1. **Diferenças entre os pontos**:
-   - $ \Delta x = 6 - 2 = 4 $
-   - $ \Delta y = 7 - 3 = 4 $
+   - Δx = 6 - 2 = 4 
+   - Δy = 7 - 3 = 4 
 
 2. **Cálculo do ângulo**:
-   - $ \theta = \arctan\left(\frac{\Delta y}{\Delta x}\right) = \arctan\left(\frac{4}{4}\right) = \arctan(1) \approx 45^\circ $ ou $0.785$ radianos.
+   - theta = arctan(Δy/Δx) = arctan(4/4) = arctan(1) = 45° ou 0.785 radianos.
 
 3. **Cálculo das novas coordenadas**:
-   - $ x_{\text{new}} = 2 + 2 \cdot \cos(0.785) $
-     - $ \cos(0.785) \approx 0.707 $
-     - $ x_{\text{new}} = 2 + 2 \cdot 0.707 = 2 + 1.414 = 3.414 $
-   - $ y_{\text{new}} = 3 + 2 \cdot \sin(0.785) $
-     - $ \sin(0.785) \approx 0.707 $
-     - $ y_{\text{new}} = 3 + 2 \cdot 0.707 = 3 + 1.414 = 4.414 $
+   - x_new = 2 + 2 . cos(0.785) 
+     - cos(0.785) = 0.707
+     -  x_new = 2 + 2 . 0.707 = 2 + 1.414 = 3.414 
+   -  y_new = 3 + 2 . sin(0.785) 
+        - sin(0.785) = 0.707 
+        - y_new = 3 + 2 . 0.707 = 3 + 1.414 = 4.414 
 
-Resultado: o novo nó estará em $(3.414, 4.414)$.
+Resultado: o novo nó estará em (3.414, 4.414).
 
 ---
 
 ### **Por que usar o ângulo?**
 
 - O ângulo garante que o deslocamento seja na **direção correta**.
-- Sem o ângulo, seria difícil calcular os deslocamentos em $x$ e $y$ proporcionalmente à direção do ponto.
+- Sem o ângulo, seria difícil calcular os deslocamentos em x e y proporcionalmente à direção do ponto.
 
 ---
 
